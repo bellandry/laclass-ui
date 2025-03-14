@@ -1,1 +1,19 @@
-node_modules
+# Node.js
+node_modules/
+dist/
+*.log
+
+# Build output
+.pnp
+.pnp.js
+.next/
+.out/
+.vite/
+turbo/
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
