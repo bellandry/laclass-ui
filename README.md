@@ -10,7 +10,7 @@ pnpm add @laclass-ui/ui
 
 ## 🚀 Utilisation
 
-```code
+```tsx
 import { Button, useToast } from "@laclass-ui/ui";
 
 function App() {
@@ -18,7 +18,10 @@ function App() {
 
   return (
     <div>
-      <Button label="Show Toast" onClick={() => addToast({ message: "Hello!", type: "info" })} />
+      <Button
+        label="Show Toast"
+        onClick={() => addToast({ message: "Hello!", type: "info" })}
+      />
     </div>
   );
 }
