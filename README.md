@@ -45,7 +45,7 @@ pnpm dev
 2. Clone le projet :
 
 ```sh
-git clone https://github.com/ton-utilisateur/mon-ui-library.git
+git clone https://github.com/bellandry/laclass-ui.git
 ```
 
 3. Crée une branche :
