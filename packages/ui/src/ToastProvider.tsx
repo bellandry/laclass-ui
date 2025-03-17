@@ -11,10 +11,8 @@ interface ToastContextType {
   addToast: (toast: Omit<ToastWithId, "id">) => void;
 }
 
-// Création du contexte
 const ToastContext = createContext<ToastContextType | undefined>(undefined);
 
-// Hook personnalisé pour accéder au contexte
 export const useToast = () => {
   const context = useContext(ToastContext);
   if (!context) {
@@ -23,18 +21,15 @@ export const useToast = () => {
   return context;
 };
 
-// Provider pour gérer les toasts
 export const ToastProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [toasts, setToasts] = useState<ToastWithId[]>([]);
 
-  // Fonction pour ajouter un toast
   const addToast = (toast: Omit<ToastWithId, "id">) => {
     setToasts((prevToasts) => [...prevToasts, { ...toast, id: Date.now() }]);
   };
 
-  // Fonction pour supprimer un toast
   const removeToast = (id: number) => {
     setToasts((prevToasts) => prevToasts.filter((t) => t.id !== id));
   };
