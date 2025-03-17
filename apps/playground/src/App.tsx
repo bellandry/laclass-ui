@@ -1,35 +1,22 @@
-import { Button } from "@laclass-ui/ui";
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { Button, useToast } from "@laclass-ui/ui";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const { addToast } = useToast();
 
   return (
-    <>
-      <div className="flex">
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <Button label="Salut les gens!" onClick={() => alert("Hello!")} />
-    </>
+    <div className="p-10">
+      <Button
+        label="Show Success Toast"
+        onClick={() => addToast({ message: "Success!" })}
+      />
+      <Button
+        label="Show Error Toast"
+        onClick={() =>
+          addToast({ message: "Something went wrong!", type: "error" })
+        }
+        className="ml-2"
+      />
+    </div>
   );
 }
 
